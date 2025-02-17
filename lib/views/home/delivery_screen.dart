@@ -3,9 +3,12 @@ import 'package:zomato_partial_clone/api_services/api_for_recepie_item_widget.da
 import 'package:zomato_partial_clone/api_services/api_for_recommended_restaurant_widget.dart';
 import 'package:zomato_partial_clone/api_services/api_for_restaurant_item_widget.dart';
 import 'package:zomato_partial_clone/views/widgets/bottom_navigation_bar_widget.dart';
+import 'package:zomato_partial_clone/views/widgets/explore_widget.dart';
 import 'package:zomato_partial_clone/views/widgets/filter_widget.dart';
+import 'package:zomato_partial_clone/views/widgets/filter_widget_for_rating.dart';
 import 'package:zomato_partial_clone/views/widgets/search_bar_widget.dart';
 import 'package:zomato_partial_clone/views/widgets/tab_bar_for_delivery_screen.dart';
+import 'package:zomato_partial_clone/views/widgets/veg_mode_widget.dart';
 
 class DeliveryScreen extends StatefulWidget {
   const DeliveryScreen({super.key});
@@ -113,9 +116,20 @@ class DeliveryScreenState extends State<DeliveryScreen> {
                 )),
           ),
           SliverAppBar(
-            title: SearchBarWidget(
-              leading: Icons.search_rounded,
-              hint: "Restaurant name or a dish...",
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: SearchBarWidget(
+                    leading: Icons.search_rounded,
+                    hint: "Restaurant name or a dish...",
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                VegModeToggle()
+              ],
             ),
             automaticallyImplyLeading: false,
             elevation: 0,
@@ -130,6 +144,34 @@ class DeliveryScreenState extends State<DeliveryScreen> {
                 children: [
                   TabBarForDeliveryScreen(),
                   ApiForRecommendedRestaurantWidget(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: Container(
+                          height: 1,
+                          color: Color(0xffe6e9ef),
+                        )),
+                        Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 1),
+                            child: Text(
+                              "EXPLORE",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  color: Color(0xff586377),
+                                  letterSpacing: 1.5),
+                            )),
+                        Expanded(
+                            child: Container(
+                          height: 1,
+                          color: Color(0xffe6e9ef),
+                        )),
+                      ],
+                    ),
+                  ),
+                  ExploreWidget(),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15),
                     child: Row(
@@ -206,7 +248,9 @@ class DeliveryScreenState extends State<DeliveryScreen> {
                     hasMultipleOption: true,
                   ),
                   FilterWidget(tag: "Nearest"),
-                  FilterWidget(tag: "Rating 4.0+"),
+                  FilterWidgetForRating(
+                    tag: "Rating 4.0+",
+                  ),
                   FilterWidget(tag: "Pure Veg"),
                   FilterWidget(tag: "New Arrivals"),
                   FilterWidget(

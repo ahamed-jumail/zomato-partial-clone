@@ -23,7 +23,7 @@ class ApiForRecommendedRestaurantWidgetState
   Future<void> fetchRecommendedRestaurants() async {
     try {
       final response = await Dio().get(
-          'https://crudcrud.com/api/a563451adf774c618489df9de391f847/appData');
+          'https://crudcrud.com/api/668670b8229a4d4ab8e0dd3a71cd51f0/appData');
       if (response.statusCode == 200) {
         setState(() {
           isLoading = false;

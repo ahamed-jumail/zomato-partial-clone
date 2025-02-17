@@ -8,8 +8,7 @@ class MyHttpOverrides extends HttpOverrides {
   HttpClient createHttpClient(SecurityContext? context) {
     return super.createHttpClient(context)
       ..badCertificateCallback =
-          (X509Certificate cert, String host, int port) =>
-              true; // Bypass certificate validation
+          (X509Certificate cert, String host, int port) => true;
   }
 }
 
@@ -28,11 +27,9 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-  // Method to post data using Dio
   Future<void> postData() async {
     Dio dio = Dio();
 
-    // Load the JSON data (you can also load it from an actual file)
     String jsonData = '''{
     "data_for_RecommendedRestaurantWidget": {
         "data1": {
@@ -156,7 +153,7 @@ class HomeScreen extends StatelessWidget {
             "speciality": "Burgers",
             "foodType": "Fast Food",
             "lowestPrice": 5.99,
-            "deliveryTime": "30",
+            "deliveryTime": "30-40",
             "distance": 2.5,
             "discount": "10% off",
             "offerApplicable": "FLAT 50% off"
@@ -168,7 +165,7 @@ class HomeScreen extends StatelessWidget {
             "speciality": "North Indian",
             "foodType": "Indian",
             "lowestPrice": 12.99,
-            "deliveryTime": "45",
+            "deliveryTime": "45-55",
             "distance": 3.2,
             "discount": "15% off",
             "offerApplicable": "FLAT 50% off"
@@ -180,7 +177,7 @@ class HomeScreen extends StatelessWidget {
             "speciality": "Sushi",
             "foodType": "Japanese",
             "lowestPrice": 18.99,
-            "deliveryTime": "25",
+            "deliveryTime": "25-35",
             "distance": 1.8,
             "discount": "10% off",
             "offerApplicable": "FLAT 50% off"
@@ -188,11 +185,11 @@ class HomeScreen extends StatelessWidget {
         "data4": {
             "imageUrl": "https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?cs=srgb&dl=pexels-saveurs-secretes-5560763.jpg&fm=jpg",
             "restaurantName": "Pasta Fresca",
-            "rating": 4.3,
+            "rating": 3.4,
             "speciality": "Pasta",
             "foodType": "Italian",
             "lowestPrice": 8.99,
-            "deliveryTime": "30",
+            "deliveryTime": "30-40",
             "distance": 2.7,
             "discount": "20% off",
             "offerApplicable": "FLAT 50% off"
@@ -204,7 +201,7 @@ class HomeScreen extends StatelessWidget {
             "speciality": "Grilled Foods",
             "foodType": "BBQ",
             "lowestPrice": 10.99,
-            "deliveryTime": "40",
+            "deliveryTime": "40-50",
             "distance": 4.0,
             "discount": "10% off",
             "offerApplicable": "FLAT 50% off"
@@ -216,7 +213,7 @@ class HomeScreen extends StatelessWidget {
             "speciality": "Curry",
             "foodType": "Indian",
             "lowestPrice": 14.99,
-            "deliveryTime": "50",
+            "deliveryTime": "50-55",
             "distance": 5.5,
             "discount": "20% off",
             "offerApplicable": "FLAT 50% off"
@@ -224,11 +221,11 @@ class HomeScreen extends StatelessWidget {
         "data7": {
             "imageUrl": "https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?cs=srgb&dl=pexels-saveurs-secretes-5560763.jpg&fm=jpg",
             "restaurantName": "Pizza Delight",
-            "rating": 4.4,
+            "rating": 2.5,
             "speciality": "Pizza",
             "foodType": "Italian",
             "lowestPrice": 11.99,
-            "deliveryTime": "35",
+            "deliveryTime": "35-45",
             "distance": 3.0,
             "discount": "15% off",
             "offerApplicable": "FLAT 50% off"
@@ -240,7 +237,7 @@ class HomeScreen extends StatelessWidget {
             "speciality": "Vegan",
             "foodType": "Vegan",
             "lowestPrice": 9.99,
-            "deliveryTime": "30",
+            "deliveryTime": "30-40",
             "distance": 2.0,
             "discount": "5% off",
             "offerApplicable": "FLAT 50% off"
@@ -248,11 +245,11 @@ class HomeScreen extends StatelessWidget {
         "data9": {
             "imageUrl": "https://img.freepik.com/free-photo/double-hamburger-isolated-white-background-fresh-burger-fast-food-with-beef-cream-cheese_90220-1192.jpg?w=2000",
             "restaurantName": "Dim Sum Delight",
-            "rating": 4.2,
+            "rating": 1.5,
             "speciality": "Dim Sum",
             "foodType": "Chinese",
             "lowestPrice": 6.99,
-            "deliveryTime": "40",
+            "deliveryTime": "40-50",
             "distance": 4.2,
             "discount": "10% off",
             "offerApplicable": "FLAT 50% off"
@@ -264,18 +261,19 @@ class HomeScreen extends StatelessWidget {
             "speciality": "Poke Bowl",
             "foodType": "Hawaiian",
             "lowestPrice": 7.99,
-            "deliveryTime": "30",
+            "deliveryTime": "30-40",
             "distance": 2.3,
             "discount": "10% off",
             "offerApplicable": "FLAT 50% off"
         }
-    }
+    },
+    "flag_for_rating_filter": "false"
 }
 ''';
 
     // The URL where you want to send the POST request
     String url =
-        "https://crudcrud.com/api/fcb8b14ef2f5434381ab6f4e21396ef2/appData";
+        "https://crudcrud.com/api/668670b8229a4d4ab8e0dd3a71cd51f0/appData";
 
     try {
       // Send POST request to the API with JSON data

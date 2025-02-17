@@ -21,7 +21,7 @@ class ApiForRecepieItemWidgetState extends State<ApiForRecepieItemWidget> {
   Future<void> fetchRecommendedRestaurants() async {
     try {
       final response = await Dio().get(
-          'https://crudcrud.com/api/fcb8b14ef2f5434381ab6f4e21396ef2/appData');
+          'https://crudcrud.com/api/668670b8229a4d4ab8e0dd3a71cd51f0/appData');
 
       if (response.statusCode == 200) {
         setState(() {

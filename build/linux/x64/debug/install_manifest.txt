@@ -14,6 +14,8 @@
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/food-tray.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/setting_icon.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/fried_rice.png
+/home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/explore_card.jpeg
+/home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/explore_train.jpeg
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/paratha_icon.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/indian_flag_icon.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/dal_icon.png
@@ -26,8 +28,10 @@
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/change_language_icon.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/contacts_icon.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/cloche.png
+/home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/explore_offer.jpeg
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/splash_icon_2.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/manchurian_icon.png
+/home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/explore_party.jpeg
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/zomato_regular_gift_card.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/best_seller_icon.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/food_donation_banner.png
