@@ -1,0 +1,184 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+error: error reading 'CMakeCXXCompilerId.cpp'
+1 error generated.
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: -c 
+
+The output was:
+1
+clang: error: no such file or directory: 'CMakeCXXCompilerId.cpp'
+clang: error: no input files
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: --c++ 
+
+The output was:
+1
+clang: error: unsupported option '--c++'
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: --ec++ 
+
+The output was:
+1
+clang: error: unsupported option '--ec++'
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+
+The output was:
+1
+clang: error: unable to execute command: Executable "ld.lld" doesn't exist!
+clang: error: ld.lld command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/snap/flutter/current/usr/bin/ld: cannot open output file a.out: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+clang: error: no such file or directory: 'CMakeCXXCompilerId.cpp'
+clang: error: no input files
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: -c 
+
+The output was:
+1
+clang: error: no such file or directory: 'CMakeCXXCompilerId.cpp'
+clang: error: no input files
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: -c 
+
+The output was:
+1
+clang: error: no such file or directory: 'CMakeCXXCompilerId.cpp'
+clang: error: no input files
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: --c++ 
+
+The output was:
+1
+clang: error: unsupported option '--c++'
+clang: error: no such file or directory: 'CMakeCXXCompilerId.cpp'
+clang: error: no input files
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: --c++ 
+
+The output was:
+1
+clang: error: unsupported option '--c++'
+clang: error: no such file or directory: 'CMakeCXXCompilerId.cpp'
+clang: error: no input files
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: --ec++ 
+
+The output was:
+1
+clang: error: unsupported option '--ec++'
+clang: error: no such file or directory: 'CMakeCXXCompilerId.cpp'
+clang: error: no input files
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: --ec++ 
+
+The output was:
+1
+clang: error: unsupported option '--ec++'
+clang: error: no such file or directory: 'CMakeCXXCompilerId.cpp'
+clang: error: no input files
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+
+The output was:
+1
+clang: error: no such file or directory: 'CMakeCXXCompilerId.cpp'
+clang: error: no input files
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+
+The output was:
+1
+clang: error: no such file or directory: 'CMakeCXXCompilerId.cpp'
+clang: error: no input files
+
+
+Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+clang: error: no input files
+Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+clang: error: no input files
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/snap/flutter/current/usr/bin/ninja cmTC_c2436 && [1/2] Building CXX object CMakeFiles/cmTC_c2436.dir/CMakeCXXCompilerABI.cpp.o
+FAILED: CMakeFiles/cmTC_c2436.dir/CMakeCXXCompilerABI.cpp.o 
+/snap/flutter/current/usr/bin/clang++     -o CMakeFiles/cmTC_c2436.dir/CMakeCXXCompilerABI.cpp.o -c /snap/flutter/149/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+error: unable to open output file 'CMakeFiles/cmTC_c2436.dir/CMakeCXXCompilerABI.cpp.o': 'No such file or directory'
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+
+
