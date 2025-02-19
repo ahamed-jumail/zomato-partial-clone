@@ -27,7 +27,7 @@ class DiscountWidget extends StatelessWidget {
           SizedBox(width: 5),
           Text(
             discount,
-            style: TextStyle(fontSize: textSize, color: Color(0xff2b6ee2)),
+            style: TextStyle(fontSize: textSize, color: Color(0xff1c1c1c)),
           )
         ],
       ),

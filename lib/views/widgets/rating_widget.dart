@@ -23,7 +23,7 @@ class RatingWidget extends StatelessWidget {
           Text(
             rating.toStringAsFixed(1),
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 12,
               color: Colors.white,
               fontWeight: FontWeight.w600,
             ),

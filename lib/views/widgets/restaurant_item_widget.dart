@@ -51,7 +51,7 @@ class RestaurantItemWidget extends StatelessWidget {
                   ),
                   Positioned(
                     top: 1,
-                    right: 2,
+                    right: 8,
                     child: Container(
                       padding: EdgeInsets.all(5),
                       child: Row(
@@ -59,7 +59,7 @@ class RestaurantItemWidget extends StatelessWidget {
                           Icon(
                             Icons.bookmark_border_outlined,
                             color: Colors.white,
-                            size: 20,
+                            size: 25,
                           ),
                           SizedBox(
                             width: 10,
@@ -67,7 +67,7 @@ class RestaurantItemWidget extends StatelessWidget {
                           Icon(
                             Icons.visibility_off_outlined,
                             color: Colors.white,
-                            size: 20,
+                            size: 25,
                           ),
                         ],
                       ),
@@ -86,7 +86,7 @@ class RestaurantItemWidget extends StatelessWidget {
                     RestaurantNameAndRatingWidget(
                         restaurantName: restaurantName, rating: rating),
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 2),
+                      padding: EdgeInsets.only(top: 2, bottom: 6),
                       child: Row(
                         children: [
                           Text(

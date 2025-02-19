@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BottomNavigationBarWidget extends StatelessWidget {
-  final int selectedIndex; // Track the selected index
-  final Function(int) onTabSelected; // Callback to handle tab selection
+  final int selectedIndex;
+  final Function(int) onTabSelected;
 
   const BottomNavigationBarWidget({
     super.key,
@@ -18,7 +18,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
   }) =>
       Expanded(
         child: GestureDetector(
-          onTap: onTap, // Handle tab selection
+          onTap: onTap,
           child: Container(
             color: Colors.white,
             width: double.infinity,
@@ -29,7 +29,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
               children: [
                 Container(
                   width: 100,
-                  height: 3, // Height of the indicator
+                  height: 3,
                   color: isSelected ? Colors.redAccent : Colors.transparent,
                 ),
                 Spacer(),
@@ -74,18 +74,20 @@ class BottomNavigationBarWidget extends StatelessWidget {
           bottomNavigationBarItem(
             imageIcon: "assets/images/delivery_selected_icon.png",
             label: "Delivery",
-            isSelected: selectedIndex == 0, // Compare with selectedIndex
-            onTap: () => onTabSelected(0), // Set selected index when tapped
+            isSelected: selectedIndex == 0,
+            onTap: () => onTabSelected(0),
           ),
-          SizedBox(
-            height: 30,
-            child: VerticalDivider(color: Colors.grey),
+          Container(
+            width: 1,
+            height: 25,
+            padding: EdgeInsets.symmetric(vertical: 2),
+            color: Color.fromARGB(255, 148, 150, 153),
           ),
           bottomNavigationBarItem(
             imageIcon: "assets/images/food-tray.png",
             label: "Dining",
-            isSelected: selectedIndex == 1, // Compare with selectedIndex
-            onTap: () => onTabSelected(1), // Set selected index when tapped
+            isSelected: selectedIndex == 1,
+            onTap: () => onTabSelected(1),
           ),
         ],
       ),

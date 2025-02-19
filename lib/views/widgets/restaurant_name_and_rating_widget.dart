@@ -10,7 +10,7 @@ class RestaurantNameAndRatingWidget extends StatelessWidget {
     super.key,
     required this.restaurantName,
     required this.rating,
-    this.textSize = 24,
+    this.textSize = 20,
   });
 
   @override

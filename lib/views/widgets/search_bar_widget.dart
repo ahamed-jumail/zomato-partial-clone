@@ -21,14 +21,16 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 40,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(15)),
         border: Border.fromBorderSide(
-          BorderSide(color: Color(0xffe6e9ef).withOpacity(0.8), width: 1),
+          BorderSide(color: Color.fromARGB(255, 215, 220, 230), width: 1),
         ),
       ),
       margin: EdgeInsets.only(top: 15, bottom: 10),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -38,29 +40,33 @@ class SearchBarWidget extends StatelessWidget {
             ),
           ),
           Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 20),
               child: TextField(
-            controller: controller,
-            decoration: InputDecoration(
-              hintText: hint,
-              hintStyle: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w400,
-                color: hintColor,
+                controller: controller,
+                decoration: InputDecoration(
+                  hintText: hint,
+                  hintStyle: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400,
+                    color: hintColor,
+                  ),
+                  border: InputBorder.none,
+                ),
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                ),
+                onTap: () {},
               ),
-              border: InputBorder.none,
             ),
-            style: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.w400,
-              color: Colors.black,
-            ),
-            onTap: () {},
-          )),
+          ),
           Container(
             width: 1,
-            height: 30,
+            height: 25,
             padding: EdgeInsets.symmetric(vertical: 2),
-            color: Color(0xffe6e9ef),
+            color: Color.fromARGB(255, 215, 220, 230),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),

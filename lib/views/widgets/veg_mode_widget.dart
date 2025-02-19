@@ -14,7 +14,7 @@ class VegModeToggle extends StatelessWidget {
             "VEG",
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 15,
+              fontSize: 13,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
@@ -23,7 +23,7 @@ class VegModeToggle extends StatelessWidget {
             "MODE",
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 10,
+              fontSize: 8,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
@@ -33,7 +33,6 @@ class VegModeToggle extends StatelessWidget {
               width: 25,
               height: 25,
               child: Stack(
-                alignment: Alignment.center,
                 children: [
                   Positioned(
                     top: 10,
@@ -46,8 +45,7 @@ class VegModeToggle extends StatelessWidget {
                       ),
                     ),
                   ),
-                  AnimatedPositioned(
-                    duration: Duration(milliseconds: 300),
+                  Positioned(
                     left: 0,
                     top: 8.5,
                     child: Container(

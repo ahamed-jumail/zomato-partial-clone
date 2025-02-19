@@ -18,6 +18,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   Future<void> postData() async {
     Dio dio = Dio();
 
@@ -271,15 +275,12 @@ class HomeScreen extends StatelessWidget {
 }
 ''';
 
-    // The URL where you want to send the POST request
     String url =
-        "https://crudcrud.com/api/668670b8229a4d4ab8e0dd3a71cd51f0/appData";
+        "https://crudcrud.com/api/f723d768ef3345cdb0d070b351a8dd6f/appData";
 
     try {
-      // Send POST request to the API with JSON data
       Response response = await dio.post(url, data: json.decode(jsonData));
 
-      // Check if the request was successful
       if (response.statusCode == 201) {
         print('Data posted successfully');
       } else {

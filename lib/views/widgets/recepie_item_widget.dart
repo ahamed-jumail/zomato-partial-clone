@@ -27,7 +27,7 @@ class RecepieItemWidget extends StatelessWidget {
           recepieName,
           style: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: 14,
+            fontSize: 12,
             color: Color(0xff1c1c1c),
           ),
         )

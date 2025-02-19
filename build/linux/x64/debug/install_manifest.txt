@@ -3,6 +3,7 @@
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/icons/join_gold_logo.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/icons/join_gold_logo.jpg
+/home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/fonts/custom_font_regular.ttf
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/filter_icon.png
 /home/user/StudioProjects/zomato_partial_clone/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/payment_icon.png
