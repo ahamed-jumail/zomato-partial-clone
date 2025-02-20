@@ -1,6 +1,6 @@
 part of 'recepie_item_bloc.dart';
 
-abstract class RecepieItemState extends BaseState {}
+abstract class RecepieItemState extends ErrorState {}
 
 class RecepieItemInitial extends RecepieItemState {}
 
@@ -11,7 +11,4 @@ class RecepieItemLoaded extends RecepieItemState {
   RecepieItemLoaded(this.recepies);
 }
 
-class RecepieItemError extends RecepieItemState {
-  final String message;
-  RecepieItemError(this.message);
-}
+class RecepieItemError extends RecepieItemState {}

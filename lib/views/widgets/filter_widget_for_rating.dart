@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zomato_partial_clone/bloc/app_bloc/restaurant_item_bloc/restaurant_item_bloc.dart';
 
 class FilterWidgetForRating extends StatefulWidget {
@@ -19,16 +20,17 @@ class FilterWidgetForRating extends StatefulWidget {
 
 class FilterWidgetForRatingState extends State<FilterWidgetForRating> {
   bool isFiltered = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 5, right: 8),
+      margin: EdgeInsets.only(right: 8.w),
       child: Center(
         child: Material(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.r),
           color: Colors.white,
           child: InkWell(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             onTap: () {
               if (isFiltered) {
                 context
@@ -44,22 +46,28 @@ class FilterWidgetForRatingState extends State<FilterWidgetForRating> {
               });
             },
             child: Container(
-              height: 34,
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+              height: 40.h,
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Color(0xffe8e9ec)),
+                color: isFiltered
+                    ? const Color.fromARGB(255, 245, 203, 200)
+                    : Colors.white,
+                borderRadius: BorderRadius.circular(10.r),
+                border: Border.all(
+                    color: isFiltered
+                        ? Colors.red
+                        : Color.fromARGB(255, 167, 168, 170)),
               ),
               child: Row(
                 children: [
                   if (widget.icon != null)
                     Padding(
-                      padding: EdgeInsets.only(right: 4),
+                      padding: EdgeInsets.only(right: 4.w),
                       child: Image.asset(
                         widget.icon!,
                         color: Colors.black,
-                        height: 15,
-                        width: 15,
+                        height: 15.h,
+                        width: 15.w,
                       ),
                     ),
                   Text(
@@ -67,20 +75,24 @@ class FilterWidgetForRatingState extends State<FilterWidgetForRating> {
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         letterSpacing: 0,
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         color: Color(0xff1c1c1c)),
                   ),
                   if (widget.hasMultipleOption)
                     Icon(
                       Icons.arrow_drop_down,
                       color: Colors.black,
-                      size: 16,
+                      size: 16.sp,
+                    ),
+                  if (isFiltered)
+                    SizedBox(
+                      width: 6.w,
                     ),
                   if (isFiltered)
                     Icon(
                       Icons.close,
                       color: Colors.black,
-                      size: 16,
+                      size: 16.sp,
                     ),
                 ],
               ),

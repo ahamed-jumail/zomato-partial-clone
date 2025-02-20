@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomNavigationBarWidget extends StatelessWidget {
   final int selectedIndex;
@@ -22,14 +23,14 @@ class BottomNavigationBarWidget extends StatelessWidget {
           child: Container(
             color: Colors.white,
             width: double.infinity,
-            height: 56,
-            margin: EdgeInsets.only(bottom: 2),
+            height: 56.h,
+            margin: EdgeInsets.only(bottom: 2.h),
             alignment: Alignment.topCenter,
             child: Column(
               children: [
                 Container(
-                  width: 100,
-                  height: 3,
+                  width: 100.w,
+                  height: 3.h,
                   color: isSelected ? Colors.redAccent : Colors.transparent,
                 ),
                 Spacer(),
@@ -39,15 +40,15 @@ class BottomNavigationBarWidget extends StatelessWidget {
                     children: [
                       Image.asset(
                         imageIcon,
-                        height: 20,
-                        width: 20,
+                        height: 20.h,
+                        width: 20.w,
                         color: isSelected ? Colors.redAccent : Colors.grey,
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       Text(
                         label,
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                           color: Color(0xff1c1c1c),
                         ),
@@ -67,7 +68,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
     return BottomAppBar(
       padding: EdgeInsets.zero,
       elevation: 0,
-      height: 58,
+      height: 58.h,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -78,9 +79,9 @@ class BottomNavigationBarWidget extends StatelessWidget {
             onTap: () => onTabSelected(0),
           ),
           Container(
-            width: 1,
-            height: 25,
-            padding: EdgeInsets.symmetric(vertical: 2),
+            width: 1.w,
+            height: 25.h,
+            padding: EdgeInsets.symmetric(vertical: 2.h),
             color: Color.fromARGB(255, 148, 150, 153),
           ),
           bottomNavigationBarItem(

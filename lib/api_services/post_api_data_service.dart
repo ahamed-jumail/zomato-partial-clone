@@ -276,7 +276,7 @@ class HomeScreen extends StatelessWidget {
 ''';
 
     String url =
-        "https://crudcrud.com/api/f723d768ef3345cdb0d070b351a8dd6f/appData";
+        "https://crudcrud.com/api/322dfaa5e994455da46be644f1f9d275/appData";
 
     try {
       Response response = await dio.post(url, data: json.decode(jsonData));

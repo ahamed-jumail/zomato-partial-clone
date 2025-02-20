@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RecepieItemWidget extends StatelessWidget {
   final String recepieName;
@@ -16,18 +17,18 @@ class RecepieItemWidget extends StatelessWidget {
       children: [
         Image.asset(
           recepieImage,
-          height: 60,
-          width: 60,
+          height: 60.h,
+          width: 60.w,
           fit: BoxFit.contain,
         ),
         SizedBox(
-          height: 7,
+          height: 7.h,
         ),
         Text(
           recepieName,
           style: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: 12,
+            fontSize: 12.sp,
             color: Color(0xff1c1c1c),
           ),
         )

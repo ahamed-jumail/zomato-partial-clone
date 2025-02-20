@@ -7,9 +7,9 @@ class ApiRepository {
   static String scope = AppConfig.shared.scope;
   static String host = AppConfig.shared.host;
 
-  static BaseOptions options = BaseOptions(baseUrl: '$scheme://$host/$scope');
+  static BaseOptions options = BaseOptions(
+      baseUrl:
+          "https://crudcrud.com/api/322dfaa5e994455da46be644f1f9d275/appData");
   static Dio apiClient = Dio(options)
-    ..interceptors.add(PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true));
+    ..interceptors.add(PrettyDioLogger(requestHeader: true, requestBody: true));
 }

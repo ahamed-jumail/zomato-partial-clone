@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zomato_partial_clone/views/widgets/rating_widget.dart';
 
 class RestaurantNameAndRatingWidget extends StatelessWidget {
@@ -10,7 +11,7 @@ class RestaurantNameAndRatingWidget extends StatelessWidget {
     super.key,
     required this.restaurantName,
     required this.rating,
-    this.textSize = 20,
+    this.textSize = 18,
   });
 
   @override
@@ -21,7 +22,7 @@ class RestaurantNameAndRatingWidget extends StatelessWidget {
         Text(
           restaurantName,
           style: TextStyle(
-              fontSize: textSize,
+              fontSize: textSize.sp,
               color: Color(0xff1c1c1c),
               fontWeight: FontWeight.w600),
         ),

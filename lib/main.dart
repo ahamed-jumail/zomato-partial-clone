@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zomato_partial_clone/bloc/app_bloc/recepie_item_bloc/recepie_item_bloc.dart';
 import 'package:zomato_partial_clone/bloc/app_bloc/recommended_restaurant_bloc/recommended_restaurant_bloc.dart';
 import 'package:zomato_partial_clone/bloc/app_bloc/restaurant_item_bloc/restaurant_item_bloc.dart';
@@ -20,15 +21,13 @@ void main() {
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider(
-            create: (context) => RecommendedRestaurantBloc()
-              ..add(FetchRecommendedRestaurants())),
-        BlocProvider(
-          create: (context) => RecepieItemBloc()..add(FetchRecepieItems()),
+        BlocProvider<RecommendedRestaurantBloc>(
+            create: (BuildContext context) => RecommendedRestaurantBloc()),
+        BlocProvider<RecepieItemBloc>(
+          create: (BuildContext context) => RecepieItemBloc(),
         ),
-        BlocProvider(
-            create: (context) =>
-                RestaurantItemBloc()..add(FetchRestaurantItems())),
+        BlocProvider<RestaurantItemBloc>(
+            create: (BuildContext context) => RestaurantItemBloc()),
       ],
       child: const App(),
     ),
@@ -40,12 +39,15 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: "custom_font_regular",
+    return ScreenUtilInit(
+      designSize: const Size(390, 835),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: "custom_font_regular",
+        ),
+        home: DeliveryScreen(),
       ),
-      home: DeliveryScreen(),
     );
   }
 }

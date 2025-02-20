@@ -1,5 +1,6 @@
 part of 'recommended_restaurant_bloc.dart';
 
-abstract class RecommendedRestaurantEvent extends BaseEvent {}
+@immutable
+abstract class RecommendedRestaurantEvent {}
 
 class FetchRecommendedRestaurants extends RecommendedRestaurantEvent {}

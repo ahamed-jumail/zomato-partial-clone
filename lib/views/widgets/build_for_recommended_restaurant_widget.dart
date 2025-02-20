@@ -2,15 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zomato_partial_clone/bloc/app_bloc/recommended_restaurant_bloc/recommended_restaurant_bloc.dart';
 import 'package:zomato_partial_clone/views/widgets/recommended_restaurant_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BuildForRecommendedRestaurantWidget extends StatelessWidget {
+class BuildForRecommendedRestaurantWidget extends StatefulWidget {
   const BuildForRecommendedRestaurantWidget({super.key});
+
+  @override
+  State<BuildForRecommendedRestaurantWidget> createState() =>
+      BuildForRecommendedRestaurantWidgetState();
+}
+
+class BuildForRecommendedRestaurantWidgetState
+    extends State<BuildForRecommendedRestaurantWidget> {
+  late final RecommendedRestaurantBloc recommendedRestaurantBloc;
+
+  @override
+  void initState() {
+    recommendedRestaurantBloc =
+        BlocProvider.of<RecommendedRestaurantBloc>(context);
+    final state = BlocProvider.of<RecommendedRestaurantBloc>(context).state;
+    if (state is! RecommendedRestaurantLoaded) {
+      recommendedRestaurantBloc.add(FetchRecommendedRestaurants());
+    }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 326,
-      padding: const EdgeInsets.symmetric(vertical: 15),
+      height: 398.h,
+      padding: EdgeInsets.symmetric(vertical: 15.h),
       child: BlocBuilder<RecommendedRestaurantBloc, RecommendedRestaurantState>(
         builder: (context, state) {
           if (state is RecommendedRestaurantLoading) {
@@ -20,7 +41,7 @@ class BuildForRecommendedRestaurantWidget extends StatelessWidget {
             return restaurants.isEmpty
                 ? const Center(child: Text('No restaurants found'))
                 : ListView.builder(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    padding: EdgeInsets.symmetric(horizontal: 15.w),
                     itemCount: restaurants.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
@@ -36,7 +57,7 @@ class BuildForRecommendedRestaurantWidget extends StatelessWidget {
                             deliveryTime: restaurant.deliveryTime,
                             distance: restaurant.distance,
                           ),
-                          const SizedBox(height: 10),
+                          SizedBox(height: 10.h),
                           RecommendedRestaurantWidget(
                             imagePath: restaurant2.imageUrl,
                             offerApplicable: restaurant2.offerApplicable,
@@ -49,7 +70,7 @@ class BuildForRecommendedRestaurantWidget extends StatelessWidget {
                     },
                   );
           } else if (state is RecommendedRestaurantError) {
-            return Center(child: Text(state.message));
+            return Center(child: Text("Error in Fetching"));
           }
           return const Center(child: Text("Something went wrong"));
         },

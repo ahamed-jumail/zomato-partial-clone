@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zomato_partial_clone/views/widgets/custom_dashed_divider.dart';
 import 'package:zomato_partial_clone/views/widgets/delivery_time_and_distance_widget.dart';
 import 'package:zomato_partial_clone/views/widgets/discount_widget.dart';
@@ -32,13 +33,13 @@ class RestaurantItemWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Card(
-        margin: EdgeInsets.symmetric(horizontal: 15).copyWith(bottom: 20),
+        margin: EdgeInsets.symmetric(horizontal: 15.w).copyWith(bottom: 20.h),
         elevation: 5,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
           child: Column(
             children: [
               Stack(
@@ -47,27 +48,27 @@ class RestaurantItemWidget extends StatelessWidget {
                     imageUrl,
                     fit: BoxFit.cover,
                     width: double.infinity,
-                    height: 200,
+                    height: 200.h,
                   ),
                   Positioned(
-                    top: 1,
-                    right: 8,
+                    top: 1.h,
+                    right: 8.w,
                     child: Container(
-                      padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5.w),
                       child: Row(
                         children: [
                           Icon(
                             Icons.bookmark_border_outlined,
                             color: Colors.white,
-                            size: 25,
+                            size: 25.sp,
                           ),
                           SizedBox(
-                            width: 10,
+                            width: 10.w,
                           ),
                           Icon(
                             Icons.visibility_off_outlined,
                             color: Colors.white,
-                            size: 25,
+                            size: 25.sp,
                           ),
                         ],
                       ),
@@ -76,7 +77,7 @@ class RestaurantItemWidget extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.all(10).copyWith(left: 12),
+                padding: EdgeInsets.all(10.w).copyWith(left: 12.w),
                 child: Column(
                   children: [
                     DeliveryTimeAndDistanceWidget(
@@ -86,41 +87,41 @@ class RestaurantItemWidget extends StatelessWidget {
                     RestaurantNameAndRatingWidget(
                         restaurantName: restaurantName, rating: rating),
                     Padding(
-                      padding: EdgeInsets.only(top: 2, bottom: 6),
+                      padding: EdgeInsets.only(top: 2.h, bottom: 6.h),
                       child: Row(
                         children: [
                           Text(
                             speciality,
                             style: TextStyle(
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 color: Color(0xff586377).withOpacity(0.8),
                                 fontWeight: FontWeight.w400),
                           ),
                           Padding(
-                            padding: EdgeInsets.all(5),
+                            padding: EdgeInsets.all(5.w),
                             child: Icon(
                               Icons.circle,
-                              size: 5,
+                              size: 5.sp,
                             ),
                           ),
                           Text(
                             foodType,
                             style: TextStyle(
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 color: Color(0xff586377).withOpacity(0.8),
                                 fontWeight: FontWeight.w400),
                           ),
                           Padding(
-                            padding: EdgeInsets.all(5),
+                            padding: EdgeInsets.all(5.w),
                             child: Icon(
                               Icons.circle,
-                              size: 5,
+                              size: 5.sp,
                             ),
                           ),
                           Text(
-                            "\u{20B9}$lowestPriceOfItem for one",
+                            "\u{20B9}${lowestPriceOfItem.toStringAsFixed(0)} for one",
                             style: TextStyle(
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 color: Color(0xff586377).withOpacity(0.8),
                                 fontWeight: FontWeight.w400),
                           ),

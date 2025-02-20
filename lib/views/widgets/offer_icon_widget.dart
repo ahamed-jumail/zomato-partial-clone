@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OfferIconWidget extends StatelessWidget {
   final double iconSize;
@@ -15,8 +16,8 @@ class OfferIconWidget extends StatelessWidget {
           colors: [Color(0xff2b6ee2), Color(0xff417cdb)]).createShader(bounds),
       child: Image.asset(
         "assets/images/offer_icon.png",
-        height: iconSize,
-        width: iconSize,
+        height: iconSize.h,
+        width: iconSize.w,
       ),
     );
   }

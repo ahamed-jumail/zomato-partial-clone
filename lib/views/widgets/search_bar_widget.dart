@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchBarWidget extends StatelessWidget {
   final String? hint;
@@ -21,19 +22,19 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
+      height: 55.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(15)),
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(15.r)),
         border: Border.fromBorderSide(
-          BorderSide(color: Color.fromARGB(255, 215, 220, 230), width: 1),
+          BorderSide(color: Color.fromARGB(255, 167, 168, 170), width: 1.w),
         ),
       ),
-      margin: EdgeInsets.only(top: 15, bottom: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Icon(
               leading,
               color: Colors.redAccent,
@@ -41,20 +42,20 @@ class SearchBarWidget extends StatelessWidget {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 20),
+              padding: EdgeInsets.only(bottom: 25.h),
               child: TextField(
                 controller: controller,
                 decoration: InputDecoration(
                   hintText: hint,
                   hintStyle: TextStyle(
-                    fontSize: 15,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: hintColor,
                   ),
                   border: InputBorder.none,
                 ),
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 17.sp,
                   fontWeight: FontWeight.w400,
                   color: Colors.black,
                 ),
@@ -63,13 +64,13 @@ class SearchBarWidget extends StatelessWidget {
             ),
           ),
           Container(
-            width: 1,
-            height: 25,
-            padding: EdgeInsets.symmetric(vertical: 2),
+            width: 1.w,
+            height: 25.h,
+            padding: EdgeInsets.symmetric(vertical: 2.h),
             color: Color.fromARGB(255, 215, 220, 230),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Icon(
               Icons.mic_none,
               color: Colors.red,

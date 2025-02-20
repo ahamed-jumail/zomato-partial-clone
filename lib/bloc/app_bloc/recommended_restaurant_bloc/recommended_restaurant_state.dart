@@ -1,6 +1,6 @@
 part of 'recommended_restaurant_bloc.dart';
 
-abstract class RecommendedRestaurantState extends BaseState {}
+abstract class RecommendedRestaurantState extends ErrorState {}
 
 class RecommendedRestaurantInitial extends RecommendedRestaurantState {}
 
@@ -13,7 +13,5 @@ class RecommendedRestaurantLoaded extends RecommendedRestaurantState {
 }
 
 class RecommendedRestaurantError extends RecommendedRestaurantState {
-  final String message;
-
-  RecommendedRestaurantError(this.message);
+  RecommendedRestaurantError();
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zomato_partial_clone/views/widgets/filter_widget.dart';
 import 'package:zomato_partial_clone/views/widgets/filter_widget_for_rating.dart';
 
@@ -8,13 +9,14 @@ class BuildForFilterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      backgroundColor: Colors.white,
       automaticallyImplyLeading: false,
       title: Container(
-        height: 50,
-        margin: EdgeInsets.symmetric(vertical: 14),
+        height: 50.h,
+        margin: EdgeInsets.symmetric(vertical: 14.h),
         child: ListView(
           shrinkWrap: true,
-          padding: EdgeInsets.only(right: 1),
+          padding: EdgeInsets.only(right: 1.w),
           scrollDirection: Axis.horizontal,
           children: [
             FilterWidget(

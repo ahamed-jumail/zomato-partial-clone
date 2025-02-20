@@ -1,3 +1,4 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zomato_partial_clone/api_services/restaurant_item_service.dart';
 import 'package:zomato_partial_clone/core/base_bloc/base_bloc.dart';
 import 'package:zomato_partial_clone/models/restaurant_item.dart';
@@ -7,53 +8,65 @@ part 'restaurant_item_state.dart';
 
 class RestaurantItemBloc
     extends BaseBloc<RestaurantItemEvent, RestaurantItemState> {
-  final RestaurantItemService restaurantItemService = RestaurantItemService();
+  RestaurantItemBloc() : super(RestaurantItemInitial());
+
   late final List<RestaurantItem> restaurants;
-  bool hasMoreData = true;
-  int currentPage = 1;
 
-  RestaurantItemBloc() : super(RestaurantItemInitial()) {
-    on<FetchRestaurantItems>((event, emit) async {
-      if (event.isLoadMore && !hasMoreData) return;
+  final RestaurantItemService recepieItemService = RestaurantItemService();
 
-      if (event.isLoadMore) {
-        emit(RestaurantItemLoadingMore(restaurants));
-      } else {
-        emit(RestaurantItemLoading());
-      }
+  Future<void> fetchRestaurantItems(
+      FetchRestaurantItems event, Emitter<RestaurantItemState> emit) async {
+    emit(RestaurantItemLoading());
 
-      try {
-        final newRestaurants = await restaurantItemService.fetchRestaurantItems(
-            page: currentPage, limit: 10);
+    restaurants = await recepieItemService.fetchRestaurantItems();
 
-        if (newRestaurants.isEmpty) {
-          hasMoreData = false;
-        } else {
-          currentPage++;
-        }
+    emit(RestaurantItemLoaded(restaurants));
+  }
 
-        if (event.isLoadMore) {
-          restaurants.addAll(newRestaurants);
-          emit(RestaurantItemLoaded(restaurants));
-        } else {
-          restaurants = newRestaurants;
-          emit(RestaurantItemLoaded(restaurants));
-        }
-      } catch (e) {
-        emit(RestaurantItemError("Error fetching data: $e"));
-      }
-    });
+  Future<void> fetchMoreRestaurantItems(
+      FetchMoreRestaurantItems event, Emitter<RestaurantItemState> emit) async {
+    if (state is RestaurantItemLoading) return;
+    emit(RestaurantItemLoading());
+    final List<RestaurantItem> moreRestaurants =
+        await recepieItemService.fetchRestaurantItems();
+    restaurants.addAll(moreRestaurants);
 
-    on<FilterRestaurantItemsEvent>((event, emit) {
-      final restaurantsFiltered = restaurants
-          .where((RestaurantItem restaurant) => restaurant.rating >= 4.0)
-          .toList();
-      emit(RestaurantItemLoaded(restaurantsFiltered));
-    });
+    emit(RestaurantItemLoaded(restaurants));
+  }
 
-    on<UnFilterRestaurantItemsEvent>((event, emit) {
-      final restaurantsFiltered = restaurants;
-      emit(RestaurantItemLoaded(restaurantsFiltered));
-    });
+  Future<void> filterRestaurantItems(FilterRestaurantItemsEvent event,
+      Emitter<RestaurantItemState> emit) async {
+    final restaurantsFiltered = restaurants
+        .where((RestaurantItem restaurant) => restaurant.rating >= 4.0)
+        .toList();
+    emit(RestaurantItemLoaded(restaurantsFiltered));
+  }
+
+  Future<void> unFilterRestaurantItems(UnFilterRestaurantItemsEvent event,
+      Emitter<RestaurantItemState> emit) async {
+    final restaurantsFiltered = restaurants;
+    emit(RestaurantItemLoaded(restaurantsFiltered));
+  }
+
+  @override
+  Future<void> eventHandlerMethod(
+      RestaurantItemEvent event, Emitter<RestaurantItemState> emit) async {
+    switch (event.runtimeType) {
+      case const (FetchRestaurantItems):
+        return fetchRestaurantItems(event as FetchRestaurantItems, emit);
+      case const (FetchMoreRestaurantItems):
+        return fetchMoreRestaurantItems(
+            event as FetchMoreRestaurantItems, emit);
+      case const (FilterRestaurantItemsEvent):
+        return filterRestaurantItems(event as FilterRestaurantItemsEvent, emit);
+      case const (UnFilterRestaurantItemsEvent):
+        return unFilterRestaurantItems(
+            event as UnFilterRestaurantItemsEvent, emit);
+    }
+  }
+
+  @override
+  RestaurantItemState getErrorState() {
+    return RestaurantItemError();
   }
 }

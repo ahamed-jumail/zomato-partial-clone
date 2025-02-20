@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ExploreWidget extends StatelessWidget {
   const ExploreWidget({super.key});
@@ -7,19 +8,19 @@ class ExploreWidget extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.all(12),
+          padding: EdgeInsets.all(12.sp),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.r),
           ),
           child: Column(
             children: [
               Image.asset(
                 imagePath,
-                height: 50,
-                width: 50,
+                height: 50.h,
+                width: 50.w,
               ),
               SizedBox(
-                height: 8,
+                height: 8.h,
               ),
               Column(
                 spacing: 0,
@@ -29,6 +30,7 @@ class ExploreWidget extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w500,
+                      fontSize: 14.sp,
                     ),
                   ),
                   Text(
@@ -36,6 +38,7 @@ class ExploreWidget extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w500,
+                      fontSize: 14.sp,
                     ),
                   ),
                 ],
@@ -50,7 +53,7 @@ class ExploreWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
